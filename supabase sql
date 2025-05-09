@@ -1,0 +1,23 @@
+CREATE TABLE stock_prices(
+  ticker TEXT,
+  date DATE,
+  open FLOAT,
+  high FLOAT,
+  low FLOAT,
+  close FLOAT,
+  volume FLOAT,
+  PRIMARY KEY(ticker, date)
+
+);
+
+ALTER TABLE stock_prices ADD COLUMN sentiment_score FLOAT;
+
+CREATE TABLE news_articles (
+  id SERIAL PRIMARY KEY,
+  ticker TEXT,
+  published_date DATE,
+  headline TEXT,
+  content TEXT,
+  sentiment FLOAT
+);
+CREATE INDEX idx_ticker_date ON news_articles(ticker, published_date);
