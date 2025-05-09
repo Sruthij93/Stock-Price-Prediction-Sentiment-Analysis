@@ -186,7 +186,7 @@ async def fetch_news_chunk(session, symbol, from_str, to_str):
 async def fetch_full_year_news_async(session, symbol):
     
     end_date = dt.datetime.today()
-    start_date = end_date - dt.timedelta(days=11)
+    start_date = end_date - dt.timedelta(days=365)
     all_articles = []
     
     
